@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Ransie F. Arboleda | Full-Stack Developer",
   description:
-    "Portfolio of Ransie F. Arboleda, BSIT student and Full-Stack Developer Intern building web, mobile, and game projects.",
+    "Portfolio of Ransie F. Arboleda, junior full-stack and game developer building web, mobile, and game projects.",
 };
 
 // Runs before the page paints, so the saved color and mode show instantly (no flash).

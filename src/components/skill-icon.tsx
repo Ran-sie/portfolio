@@ -18,8 +18,15 @@ import {
   SiUnity,
   SiClaude,
   SiGooglegemini,
+  SiFlutter,
+  SiNodedotjs,
+  SiFlask,
+  SiOpenjdk,
+  SiMysql,
+  SiAndroidstudio,
+  SiBlender,
 } from "react-icons/si";
-import { TbBrandCSharp, TbBrandVscode, TbBrandOpenai } from "react-icons/tb";
+import { TbBrandCSharp, TbBrandVscode, TbBrandOpenai, TbBrandVisualStudio } from "react-icons/tb";
 import { FaDatabase, FaCode } from "react-icons/fa6";
 
 // Skill name -> icon and brand color. Add new skills here.
@@ -33,6 +40,15 @@ const icons: Record<string, { icon: IconType; color: string }> = {
   PHP: { icon: SiPhp, color: "#8892BF" },
   "C#": { icon: TbBrandCSharp, color: "#A179DC" },
   "ASP.NET": { icon: SiDotnet, color: "#7A6FF0" },
+  "ASP.NET Core": { icon: SiDotnet, color: "#7A6FF0" },
+  Flutter: { icon: SiFlutter, color: "#02569B" },
+  "Node.js": { icon: SiNodedotjs, color: "#5FA04E" },
+  Flask: { icon: SiFlask, color: "currentColor" },
+  Java: { icon: SiOpenjdk, color: "#E76F00" },
+  MySQL: { icon: SiMysql, color: "#4479A1" },
+  "Visual Studio": { icon: TbBrandVisualStudio, color: "#865FC5" },
+  "Android Studio": { icon: SiAndroidstudio, color: "#3DDC84" },
+  Blender: { icon: SiBlender, color: "#E87D0D" },
   "VB.NET": { icon: SiDotnet, color: "#7A6FF0" },
   Python: { icon: SiPython, color: "#4B8BBE" },
   PostgreSQL: { icon: SiPostgresql, color: "#699ECA" },

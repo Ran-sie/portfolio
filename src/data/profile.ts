@@ -4,31 +4,32 @@
 export const profile = {
   name: "Ransie F. Arboleda",
   initials: "RA", // shown until you add a photo
-  headline: "Full-Stack Developer · BSIT Student",
+  headline: "Junior Full-Stack & Game Developer",
   roles: ["Full-Stack", "Web", "Mobile", "Game Dev"],
   // Words for the typing effect in the hero: "I build ___"
   typing: ["full-stack web apps", "mobile apps", "games", "clean user interfaces"],
   location: "Quezon City, Philippines",
   openToWork: true, // shows the green "Open to opportunities" badge
   intro:
-    "BSIT student and Full-Stack Developer Intern. I build products end to end — from the database to the interface — and I care about making them fast, clean, and easy to use.",
+    "4th-year BSIT student and junior full-stack developer. I build products end to end — from the database to the interface — and I care about making them fast, clean, and easy to use.",
   about: [
-    "I'm a 4th-year BSIT student at Quezon City University and currently a Full-Stack Developer Intern, working on real production web apps.",
+    "I'm a 4th-year BSIT student at Quezon City University who builds full-stack web, mobile, and game projects.",
+    "I've led three team projects as lead developer: a hospital management system secured with MFA and encryption, an AI-assisted mobile app for community issue reporting, and a booking platform evaluated with timed experiments.",
     "I enjoy turning ideas into working software, whether that's a web app, a mobile app, or a game. I use AI tools like Claude every day to plan, debug, and ship faster, while still understanding and owning the code I write.",
     "I'm looking for a junior developer role where I can ship real products and keep growing.",
   ],
   facts: [
     { label: "Education", value: "BSIT, Quezon City University (4th year)" },
-    { label: "Experience", value: "Full-Stack Developer Intern" },
+    { label: "Experience", value: "Lead Developer, 3 team projects" },
     { label: "Focus", value: "Web · Mobile · Games" },
   ],
 };
 
 export const skills = [
-  { group: "Frontend", items: ["HTML", "CSS", "JavaScript", "React", "Next.js"] },
-  { group: "Backend", items: ["PHP", "C#", "ASP.NET", "VB.NET", "Python"] },
-  { group: "Database", items: ["PostgreSQL", "MariaDB", "Oracle", "Supabase"] },
-  { group: "Tools", items: ["Git", "GitHub", "XAMPP", "VS Code"] },
+  { group: "Frontend & Mobile", items: ["HTML", "CSS", "JavaScript", "React", "Next.js", "Flutter"] },
+  { group: "Backend", items: ["C#", "ASP.NET Core", "Node.js", "Python", "Flask", "Java"] },
+  { group: "Database", items: ["PostgreSQL", "MySQL", "MariaDB", "Supabase"] },
+  { group: "Tools & Game Dev", items: ["Git", "GitHub", "VS Code", "Visual Studio", "Android Studio", "Unity", "Blender"] },
 ];
 
 // AI tools you use, shown under Skills.
@@ -66,29 +67,38 @@ export const games = [
   },
 ];
 
-// Placeholders — replace with your real projects later.
+// Your projects. Add github/live links when available ("" hides the link).
 export const projects = [
   {
-    title: "Project One",
+    title: "Secure Hospital Management System",
     type: "Web App",
-    description: "A full-stack web app. Short description of what it does and who it's for.",
-    tech: ["Next.js", "TypeScript", "Supabase"],
+    role: "Lead Developer · Group Project",
+    period: "Apr 2026 – May 2026",
+    description:
+      "A web system for patient records, appointments, and hospital operations. Sensitive health data is protected with role-based access control, multi-factor authentication, encryption, and audit logging.",
+    tech: ["React", "ASP.NET Core", "PostgreSQL", "REST API", "EmailJS"],
     github: "",
     live: "",
   },
   {
-    title: "Project Two",
+    title: "CivicConnect",
     type: "Mobile App",
-    description: "A mobile app. Short description of the problem it solves.",
-    tech: ["React Native", "PostgreSQL"],
+    role: "Lead Developer · Group Project",
+    period: "Feb 2026 – May 2026",
+    description:
+      "An AI-driven mobile app where citizens report community issues with photos and track government responses. AI categorizes and prioritizes reports to speed up handling.",
+    tech: ["Flutter", "Python", "SQL", "AI"],
     github: "",
     live: "",
   },
   {
-    title: "Project Three",
-    type: "Game",
-    description: "A game. Short description of the gameplay and what you built.",
-    tech: ["C#", "Unity"],
+    title: "InstaStay",
+    type: "Desktop App",
+    role: "Lead Developer · Group Project",
+    period: "Mar 2025 – May 2025",
+    description:
+      "An instant reservation platform covering the full flow from search to completed booking. Booking time was measured through timed experiments and user feedback.",
+    tech: ["VB.NET", "MariaDB", "Visual Studio"],
     github: "",
     live: "",
   },
@@ -96,9 +106,9 @@ export const projects = [
 
 // Fill these in. Leave a value as "" to hide it from the page.
 export const contact = {
-  email: "your.email@example.com",
-  github: "https://github.com/your-username",
-  itch: "https://your-username.itch.io", // your games
+  email: "arboleda.ransie.ferreras@gmail.com",
+  github: "https://github.com/Ran-sie",
+  itch: "", // your itch.io profile URL, e.g. https://name.itch.io
   linkedin: "", // add later when your profile is ready
   facebook: "",
   // Put your PDF in the /public folder and name it resume.pdf.

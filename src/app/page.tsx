@@ -4,6 +4,7 @@ import {
   FaArrowUp,
   FaArrowUpRightFromSquare,
   FaBriefcase,
+  FaDesktop,
   FaEnvelope,
   FaFacebook,
   FaGamepad,
@@ -39,6 +40,7 @@ const factIcons = [FaGraduationCap, FaBriefcase, FaLayerGroup];
 const projectIcons: Record<string, typeof FaGlobe> = {
   "Web App": FaGlobe,
   "Mobile App": FaMobileScreen,
+  "Desktop App": FaDesktop,
   Game: FaGamepad,
 };
 
@@ -215,7 +217,7 @@ export default function Home() {
                 </div>
                 <div className="float absolute -left-2 top-10 sm:-left-6 rounded-xl border border-line bg-surface/90 px-4 py-3 shadow-xl backdrop-blur">
                   <p className="text-xs text-muted">Currently</p>
-                  <p className="text-sm font-semibold">Full-Stack Dev Intern</p>
+                  <p className="text-sm font-semibold">Seeking junior dev roles</p>
                 </div>
                 <div
                   className="float absolute -right-2 bottom-12 sm:-right-4 rounded-xl border border-line bg-surface/90 px-4 py-3 shadow-xl backdrop-blur"
@@ -325,7 +327,7 @@ export default function Home() {
           {/* ---------- Projects ---------- */}
           <section id="projects" className="scroll-mt-16 py-24">
             <SectionHeader eyebrow="Projects" title="Selected work.">
-              A few things I&apos;ve built. More case studies coming soon.
+              Team projects I led as lead developer, from secure web systems to AI-powered mobile apps.
             </SectionHeader>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {projects.map((project, i) => {
@@ -346,6 +348,9 @@ export default function Home() {
                           {project.type}
                         </p>
                         <h3 className="mt-2 text-xl font-semibold">{project.title}</h3>
+                        <p className="mt-1 text-sm text-muted">
+                          {project.role} · {project.period}
+                        </p>
                         <p className="mt-3 flex-1 leading-relaxed text-muted">{project.description}</p>
                         <ul className="mt-5 flex flex-wrap gap-2">
                           {project.tech.map((t) => (
@@ -379,7 +384,7 @@ export default function Home() {
                             </a>
                           )}
                           {!project.github && !project.live && (
-                            <span className="text-muted">Coming soon</span>
+                            <span className="text-muted">Academic project</span>
                           )}
                         </div>
                       </div>

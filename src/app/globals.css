@@ -1,26 +1,143 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Makes Tailwind's `dark:` classes follow our dark/light toggle */
+@custom-variant dark (&:where([data-mode="dark"], [data-mode="dark"] *));
+
+/* ---------- Mode: dark (default) ---------- */
+:root,
+[data-mode="dark"] {
+  color-scheme: dark;
+  --background: #0b0d10;
+  --surface: #12161b;
+  --foreground: #e8eaed;
+  --muted: #9aa3ad;
+  --line: #222831;
+  --grid-line: rgb(255 255 255 / 0.04);
+  --on-accent: #0b0d10; /* text on top of accent-colored buttons */
 }
+
+/* ---------- Mode: light ---------- */
+[data-mode="light"] {
+  color-scheme: light;
+  --background: #f6f7f9;
+  --surface: #ffffff;
+  --foreground: #111827;
+  --muted: #5b6472;
+  --line: #e2e5ea;
+  --grid-line: rgb(17 24 39 / 0.05);
+  --on-accent: #ffffff;
+}
+
+/* ---------- Accent colors ----------
+   Each color has a brighter shade for dark mode and a deeper shade for
+   light mode, so text stays readable on both backgrounds. */
+:root,
+[data-accent="blue"]    { --accent: #3b82f6; }
+[data-accent="emerald"] { --accent: #10b981; }
+[data-accent="violet"]  { --accent: #8b5cf6; }
+[data-accent="amber"]   { --accent: #f59e0b; }
+[data-accent="rose"]    { --accent: #f43f5e; }
+
+[data-mode="light"][data-accent="blue"]    { --accent: #2563eb; }
+[data-mode="light"][data-accent="emerald"] { --accent: #047857; }
+[data-mode="light"][data-accent="violet"]  { --accent: #7c3aed; }
+[data-mode="light"][data-accent="amber"]   { --accent: #b45309; }
+[data-mode="light"][data-accent="rose"]    { --accent: #e11d48; }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+/* Keyboard focus ring (accessibility) */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Faded grid background used in the hero and cards */
+.hero-grid {
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+/* Scroll reveal (see components/reveal.tsx) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Hero entrance (CSS only) */
+.fade-up {
+  animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+}
+
+/* Blinking cursor for the typing effect */
+.caret {
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* Gentle floating badges in the hero */
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes float {
+  50% { transform: translateY(-10px); }
+}
+
+/* Turn off motion for users who prefer less of it */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .caret, .float, .fade-up, .animate-ping { animation: none; }
+}
+
+/* Achievement popup slide-in */
+.toast-in {
+  animation: toast-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(12px) scale(0.96); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .toast-in { animation: none; }
 }

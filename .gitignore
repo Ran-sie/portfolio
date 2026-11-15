@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# exported Claude chats (private, never commit)
+conversation-*.txt
+!.env.example
+
+# private notes for Claude
+CLAUDE.md
+AGENTS.md

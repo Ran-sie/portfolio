@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ransie F. Arboleda — Portfolio
+
+Personal portfolio of **Ransie F. Arboleda**, a 4th-year BSIT student at Quezon City University and Full-Stack Developer Intern.
+
+A fast, single-page site built with Next.js and TypeScript, featuring a theme picker, achievements, an arcade section for my itch.io games, and a working contact form.
+
+## Features
+
+- **Responsive one-page layout** — works on desktop and mobile
+- **Theme picker** — 5 accent colors with dark and light modes, saved between visits
+- **Arcade section** — showcases my games, plus a hidden mini-game to discover
+- **Achievements** — small unlockable badges for exploring the site
+- **Contact form** — sends messages through EmailJS, with built-in spam limits
+- **Resume viewer** — view in the browser or download as PDF
+
+## Tech Stack
+
+| Area | Tools |
+|---|---|
+| Framework | Next.js 16 (App Router), React 19 |
+| Language | TypeScript |
+| Styling | Tailwind CSS v4 |
+| Email | EmailJS |
+| Icons | React Icons |
+| Hosting | Vercel |
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# 1. Install dependencies
+npm install
+
+# 2. Set up environment variables
+cp .env.example .env.local
+# then fill in your EmailJS keys
+
+# 3. Start the dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/          # Page layout, global styles, fonts
+├── components/   # UI components (theme picker, arcade, contact form, ...)
+└── data/
+    └── profile.ts  # All site content: bio, skills, games, projects, links
+```
 
-## Learn More
+All text on the site lives in `src/data/profile.ts`, so content can be updated without touching the page code.
 
-To learn more about Next.js, take a look at the following resources:
+## Contact
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Feel free to reach out through the contact form on the site.
